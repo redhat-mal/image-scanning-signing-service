@@ -40,16 +40,23 @@ mv $LOCAL_SOURCE_DIR $pkgPath
 
 cd $pkgPath
 
+echo "$pkgPath"
+echo " BO: ${BUILD_OUTPUT} ${BUILD_PATH} "
+
 echo
 echo "--> Beginning Go Project $pkgName =="
 echo
 
+ls -lrt
+
 # Build code
 go build -v -o ${BUILD_OUTPUT} ${BUILD_PATH}
 
+ls -lrt ${BUILD_OUTPUT}
+
 # Move built binary to gobin
 mv ${BUILD_OUTPUT} $GOBIN
-
+echo "Removing Source"
 # Remove source
 rm -rf $GOPATH/src/*
 
