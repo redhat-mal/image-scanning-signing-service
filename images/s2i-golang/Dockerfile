@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhel7/rhel:7.4
+FROM registry.access.redhat.com/ubi8/go-toolset:latest
 
 MAINTAINER Andrew Block <ablock@redhat.com>
 
@@ -16,17 +16,17 @@ ENV HOME=/opt/app-root \
 
 COPY s2i $STI_SCRIPTS_PATH
 
-RUN yum repolist > /dev/null && \
-    yum-config-manager --enable rhel-7-server-optional-rpms && \
-    yum clean all && \
-    INSTALL_PKGS="golang" && \
-    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-    rpm -V $INSTALL_PKGS && \
-    yum clean all && \
-    useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default && \
-    mkdir -p ${GOPATH}/{bin,src} && \
-    chown -R 1001:0 ${HOME} && \
-    chmod -R g+rwX ${HOME}
+#RUN yum repolist > /dev/null && \
+#    yum-config-manager --enable rhel-7-server-optional-rpms && \
+#    yum clean all && \
+#    INSTALL_PKGS="golang" && \
+#    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
+#    rpm -V $INSTALL_PKGS && \
+#    yum clean all && \
+#    useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default && \
+#    mkdir -p ${GOPATH}/{bin,src} && \
+#    chown -R 1001:0 ${HOME} && \
+#    chmod -R g+rwX ${HOME}
 
 WORKDIR ${HOME}
 
