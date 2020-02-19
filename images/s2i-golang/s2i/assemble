@@ -58,7 +58,7 @@ ls -lrt
 echo "BUILD PATH Listing"
 ls -lrt ${BUILD_PATH}
 echo "Listing BO"
-ls -lrt ${BUILD_OUTPUT}
+##ls -lrt ${BUILD_OUTPUT}
 
 # Build code
 go build -v -o ${BUILD_OUTPUT} ${BUILD_PATH}
