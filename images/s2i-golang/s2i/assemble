@@ -49,6 +49,9 @@ pwd
 echo "$pkgPath"
 echo " BO: ${BUILD_OUTPUT} ${BUILD_PATH} "
 
+echo "go ver"
+go version
+
 echo
 echo "--> Beginning Go Project $pkgName =="
 echo
