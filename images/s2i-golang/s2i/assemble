@@ -69,9 +69,7 @@ go build -v -o ${BUILD_OUTPUT} ${BUILD_PATH}
 ls -lrt ${BUILD_OUTPUT}
 
 # Move built binary to gobin
-mv ${BUILD_OUTPUT} $GOBIN/main
-
-ls -lrt $GOBIN
+##mv ${BUILD_OUTPUT} $GOBIN/main
 
 echo "Removing Source"
 # Remove source
