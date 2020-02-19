@@ -36,9 +36,15 @@ pkgPath="$GOPATH/src/$pkgName"
 # Set-up src directory tree in GOPATH
 mkdir -p "$(dirname "$pkgPath")"
 
+echo "LSD: $LOCAL_SOURCE_DIR
+
+ls -lrt $LOCAL_SOURCE_DIR
+
 mv $LOCAL_SOURCE_DIR $pkgPath
 
 cd $pkgPath
+
+pwd
 
 echo "$pkgPath"
 echo " BO: ${BUILD_OUTPUT} ${BUILD_PATH} "
@@ -48,6 +54,9 @@ echo "--> Beginning Go Project $pkgName =="
 echo
 
 ls -lrt
+
+echo "BUILD PATH"
+ls -lrt ${BUILD_PATH}
 
 # Build code
 go build -v -o ${BUILD_OUTPUT} ${BUILD_PATH}
