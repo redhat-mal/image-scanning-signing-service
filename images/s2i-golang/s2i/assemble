@@ -36,7 +36,7 @@ pkgPath="$GOPATH/src/$pkgName"
 # Set-up src directory tree in GOPATH
 mkdir -p "$(dirname "$pkgPath")"
 
-echo "LSD: $LOCAL_SOURCE_DIR
+echo "LSD: $LOCAL_SOURCE_DIR"
 
 ls -lrt $LOCAL_SOURCE_DIR
 
@@ -55,7 +55,7 @@ echo
 
 ls -lrt
 
-echo "BUILD PATH"
+echo "BUILD PATH Listing"
 ls -lrt ${BUILD_PATH}
 
 # Build code
