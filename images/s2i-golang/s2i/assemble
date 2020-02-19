@@ -57,6 +57,8 @@ ls -lrt
 
 echo "BUILD PATH Listing"
 ls -lrt ${BUILD_PATH}
+echo "Listing BO"
+ls -lrt ${BUILD_OUTPUT}
 
 # Build code
 go build -v -o ${BUILD_OUTPUT} ${BUILD_PATH}
@@ -65,6 +67,9 @@ ls -lrt ${BUILD_OUTPUT}
 
 # Move built binary to gobin
 mv ${BUILD_OUTPUT} $GOBIN
+
+ls -lrt $GOBIN
+
 echo "Removing Source"
 # Remove source
 rm -rf $GOPATH/src/*
